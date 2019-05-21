@@ -22,11 +22,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:met_baseColor="#fff"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="11"
-        app:met_primaryColor="#fff"
-        app:met_singleLineEllipsis="true" />
+   />
 
     <EditText
         android:id="@+id/regsenha"
@@ -44,11 +40,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regnome"
-        app:met_baseColor="#fff"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="11"
-        app:met_primaryColor="#fff"
-        app:met_singleLineEllipsis="true" />
+      />
     <EditText
         android:id="@+id/regnome"
         android:layout_width="match_parent"
@@ -65,11 +57,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regfone"
-        app:met_baseColor="#fff"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="11"
-        app:met_primaryColor="#fff"
-        app:met_singleLineEllipsis="true" />
+      />
 
     <Button
         android:id="@+id/regcadastrar"

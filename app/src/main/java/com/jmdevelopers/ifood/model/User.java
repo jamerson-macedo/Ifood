@@ -1,4 +1,4 @@
-package com.jmdevelopers.ifood;
+package com.jmdevelopers.ifood.model;
 
 public class User {
     private String nome;

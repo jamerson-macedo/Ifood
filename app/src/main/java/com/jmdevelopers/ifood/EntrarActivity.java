@@ -1,6 +1,7 @@
 package com.jmdevelopers.ifood;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jmdevelopers.ifood.model.User;
+import com.jmdevelopers.ifood.common.Common;
 
 public class EntrarActivity extends AppCompatActivity {
     EditText camposenha, campophone;
@@ -28,6 +31,7 @@ public class EntrarActivity extends AppCompatActivity {
         camposenha = findViewById(R.id.regsenha);
         entrar = findViewById(R.id.botaoentrar);
         // firebase
+
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         final DatabaseReference table_name = firebaseDatabase.getReference().child("Users");
         entrar.setOnClickListener(new View.OnClickListener() {
@@ -39,23 +43,26 @@ public class EntrarActivity extends AppCompatActivity {
                 table_name.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        // verifica se ja existe o cadastro e loga
                         if (dataSnapshot.child(campophone.getText().toString()).exists()) {
                             dialog.dismiss();
                             User user = dataSnapshot.child(campophone.getText().toString()).getValue(User.class);
                             if (user.getSenha().equals(camposenha.getText().toString())) {
-
+                                // pegando o usario atual
+                                Common.usuarioatual=user;
                                 Toast.makeText(EntrarActivity.this, "usuario logado", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(EntrarActivity.this, HomeActivity.class));
 
 
                             } else {
-                                Toast.makeText(EntrarActivity.this, "falha ao logar", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                                Toast.makeText(EntrarActivity.this, "senha errada", Toast.LENGTH_LONG).show();
 
 
                             }
-                        }
-                        else{
+                        } else {
 
-                            Toast.makeText(EntrarActivity.this, "falha ao logar", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EntrarActivity.this, "não existe conta", Toast.LENGTH_LONG).show();
 
 
                         }
