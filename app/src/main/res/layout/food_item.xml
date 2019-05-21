@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="4dp"
+    android:layout_marginBottom=""
     android:layout_height="200dp">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
