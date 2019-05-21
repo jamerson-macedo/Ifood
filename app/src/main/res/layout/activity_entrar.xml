@@ -8,7 +8,7 @@
     tools:context=".EntrarActivity">
 
         <EditText
-        android:id="@+id/regfone"
+        android:id="@+id/loginfone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
      />
 
     <EditText
-        android:id="@+id/regsenha"
+        android:id="@+id/loginsenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -40,11 +40,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regfone"
+        app:layout_constraintTop_toBottomOf="@+id/loginfone"
      />
 
     <Button
-        android:id="@+id/regcadastrar"
+        android:id="@+id/btlogin"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
@@ -52,7 +52,7 @@
         android:layout_marginBottom="16dp"
         android:width="0dp"
 
-        android:text="Entrar"
+        android:text="Fazer Login"
 
 
         app:layout_constraintBottom_toBottomOf="parent"

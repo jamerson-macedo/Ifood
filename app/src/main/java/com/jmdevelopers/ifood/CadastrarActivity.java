@@ -29,7 +29,7 @@ public class CadastrarActivity extends AppCompatActivity {
         regfone = findViewById(R.id.regfone);
         regsenha = findViewById(R.id.regsenha);
         regnome = findViewById(R.id.regnome);
-        cadastrar = findViewById(R.id.regcadastrar);
+        cadastrar = findViewById(R.id.btreg);
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         final DatabaseReference table_name = firebaseDatabase.getReference().child("Users");
         cadastrar.setOnClickListener(new View.OnClickListener() {

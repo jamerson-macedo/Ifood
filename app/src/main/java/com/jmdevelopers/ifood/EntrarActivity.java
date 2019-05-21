@@ -27,13 +27,15 @@ public class EntrarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrar);
-        campophone = findViewById(R.id.regfone);
-        camposenha = findViewById(R.id.regsenha);
-        entrar = findViewById(R.id.botaoentrar);
+        campophone = findViewById(R.id.loginfone);
+        camposenha = findViewById(R.id.loginsenha);
+        entrar = findViewById(R.id.btlogin);
         // firebase
 
         final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         final DatabaseReference table_name = firebaseDatabase.getReference().child("Users");
+
+
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

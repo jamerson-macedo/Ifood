@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnentrar=findViewById(R.id.botaoentrar);
         btncadastrar=findViewById(R.id.botaocadastrar);
+
         btnentrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

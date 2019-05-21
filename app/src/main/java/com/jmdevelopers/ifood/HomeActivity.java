@@ -1,5 +1,6 @@
 package com.jmdevelopers.ifood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -112,7 +113,12 @@ public class HomeActivity extends AppCompatActivity
                 holder.setListener(new ItemClickListener() {
                     @Override
                     public void onclick(View v, int position, Boolean islong) {
-                        Toast.makeText(HomeActivity.this,"" + categoria.getNome(), Toast.LENGTH_LONG).show();
+                       // get id e enviar para a proxima activity
+                        Intent intent=new Intent(HomeActivity.this,FoodActivity.class);
+                        /// mandando o id da categoria que foi selecionado
+
+                        intent.putExtra("categoria",adapter.getRef(position).getKey());
+                        startActivity(intent);
 
                     }
                 });
